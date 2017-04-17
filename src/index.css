@@ -1,12 +1,19 @@
 html {
-  font: 300 16px / 1.4 sans-serif;
+  font: 300 14px / 1.4 sans-serif;
   color: #333;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
   margin: 0;
+  height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
+}
+
+body > #root {
+  height: 100%;
 }

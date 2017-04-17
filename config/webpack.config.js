@@ -18,11 +18,15 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?/,
-        use: ['babel-loader'],
-        include: path.resolve('./src')
+        include: [
+          path.resolve('./src'),
+          path.resolve('./node_modules/react-icons')
+        ],
+        use: ['babel-loader']
       },
       {
         test: /\.css?/,
+        include: path.resolve('./src'),
         use: [
           {
             loader: 'style-loader'
@@ -39,6 +43,11 @@ module.exports = {
           }
         ]
       },
+      {
+        test: /\.svg/,
+        include: path.resolve('./src'),
+        use: ['svg-inline-loader']
+      }
 
     ]
   },

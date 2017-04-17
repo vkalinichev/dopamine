@@ -1,38 +1,19 @@
 import React from 'react'
-import styled from 'styled-components'
-import Button from './Button/Button'
+import { Router, Route } from 'react-router'
+import Layout from './Layout'
+import Tasks from './Tasks/Tasks'
+import Task from './Task/Task'
 
-const Wrapper = styled.div`
-    padding: 20px 40px;
-`
-const Title = styled.h2`
-    font-size: 18px;
-    margin-top: 0;
-`
-const Buttons = styled.div`
-    background: #eee;
-    padding: 12px 16px;
-    border-radius: .3em;
-`
+const App = ({ history }) => (
+  <Router history={ history }>
+    { console.log( history ) }
+    <Route path='/' component={Layout}>
+      <Route path=':filterId' component={Tasks}>
+        <Route path=':taskId' component={Task}/>
+      </Route>
+    </Route>
+  </Router>
 
-const App = () =>
-
-  <Wrapper>
-    <Title>Welcome!</Title>
-    <Buttons>
-      <span>Buttons:</span>
-      <div>
-        <Button>Default</Button>
-        <Button primary>Primary</Button>
-        <Button info>Info</Button>
-        <Button success>Success</Button>
-        <Button warning>Warning</Button>
-        <Button danger>Danger</Button>
-        <Button loading>Loading</Button>
-        <Button disabled>Disabled</Button>
-        <Button link>Link</Button>
-      </div>
-    </Buttons>
-  </Wrapper>
+)
 
 export default App

@@ -4,6 +4,8 @@ module.exports = {
 
   port: config.devServerPort,
 
+  historyApiFallback: true,
+
   stats: {
     colors: true,
     assets: true,
