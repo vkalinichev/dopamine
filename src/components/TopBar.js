@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import UserIcon from 'react-icons/ti/user'
-import ExitIcon from 'react-icons/md/exit-to-app'
+import UserIcon from 'react-icons/lib/ti/user'
+import ExitIcon from 'react-icons/lib/md/exit-to-app'
 import colors from './colors'
 
 const Top = styled.div`
